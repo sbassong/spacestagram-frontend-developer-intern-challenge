@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { MediaCard } from '@shopify/polaris';
-// import {Card, Image, TextContainer } from '@shopify/polaris';
-// import LikeButton from './LikeButton'
 
 const ImageCard = ({item}) => {
   const [liked, toggleLiked] = useState(false)
@@ -11,37 +9,20 @@ const ImageCard = ({item}) => {
   }
 
   return (
-    // <Card>
-    //   <Card.Section flush>
-    //     <Image
-    //       source={item.image}
-    //       alt={`Illustration of ${item.title}, sourced from NASA`}
-    //     />
-    //   </Card.Section>
-    //   <Card.Section title={item.title}>
-    //     <p>Earth_date of capture: {item.date}</p>
-    //     <TextContainer>
-    //       {item.description}
-    //     </TextContainer>
-    //     <LikeButton />
-    //   </Card.Section>
-    // </Card>
-
   < MediaCard
-    title = { `${item.title} - ${item.date}` }
-    subtitle = { `Author: ${item.copyright}`}
+    title = { `${item.title} | ${item.date}` }
     primaryAction = {{
-      content: `${item.description}`,
+      content: `${liked ? 'Liked' : 'Like'}`,
       onAction: handleclick,
       }}
-    description = "Discover how Shopify can power up your entrepreneurial journey."
+      description= {`${item.explanation}`}
       >
       <img
         alt={`Illustration of ${item.title}, sourced from NASA`}
         width="100%"
         height="100%"
         style={{ objectFit: 'cover', objectPosition: 'center', }}
-        src={item.hdurl}
+        src={item.url}
       />
   </MediaCard >
   )

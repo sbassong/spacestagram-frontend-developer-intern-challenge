@@ -3,12 +3,12 @@
 
 ## **Description**
 
-Spacestagram is an image-sharing platform from the final frontier. Build as my submision for Shopify's frontend developer internship, this app uses NASA's API to source its images. 
+Spacestagram is an image-sharing app from the final frontier. Built as my submision for Shopify's frontend developer internship, this app uses NASA's API to source its images. 
 
 ## **Technologies**
 
-* [Reactjs](https://reactjs.org/)
-* [NASA's API](https://api.nasa.gov/)
+* [Reactjs](https://reactjs.org/) / [create-react-app](https://create-react-app.dev/)
+*  Astronomy Picture of the Day API ([APOD](https://github.com/nasa/apod-api)) from [NASA](https://api.nasa.gov/)
 * [Polaris](https://polaris.shopify.com/)
 * HTML
 * CSS
