@@ -7,9 +7,13 @@ Spacestagram is an image-sharing platform from the final frontier. Build as my s
 
 ## **Technologies**
 
-* React
-* NASA's API
-* Axios library
+* [Reactjs](https://reactjs.org/)
+* [NASA's API](https://api.nasa.gov/)
+* HTML
+* CSS
+
+## **Libraries**
+* [Axios-HTTP](https://axios-http.com/)
 
 ## **Getting Started**
 
