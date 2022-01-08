@@ -1,10 +1,11 @@
 import './styles/App.css';
+import ImageCard from './components/ImageCard';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <p>hello</p>
+      
     </div>
   );
 }
