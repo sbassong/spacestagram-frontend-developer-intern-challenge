@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import {Card, Image, Button, TextContainer } from '@shopify/polaris';
 
 const ImageCard = ({item}) => {
+  const [liked, toggleLiked] = useState(false)
+
+  const handleclick = () => {
+    liked ? toggleLiked(false) : toggleLiked(true)
+  }
+
   return (
     <Card>
       <Card.Section flush>
@@ -14,7 +21,12 @@ const ImageCard = ({item}) => {
         <TextContainer>
           {item.description}
         </TextContainer>
-        <Button>Like</Button>
+        <Button 
+          onClick={handleclick}
+          className={liked && `liked`}
+        >
+          Like
+        </Button>
       </Card.Section>
     </Card>
   )
