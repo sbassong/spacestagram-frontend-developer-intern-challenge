@@ -2,17 +2,24 @@ import { useState } from 'react';
 import { MediaCard } from '@shopify/polaris';
 
 const ImageCard = ({item}) => {
-  const [liked, toggleLiked] = useState(false)
+  const [clicked, toggleClicked] = useState(false)
+  // const [liked, toggleliked] = useState('Like')
 
-  const handleclick = () => {
-    liked ? toggleLiked(false) : toggleLiked(true)
+  const handleclick = async() => {
+    if (clicked) {
+      toggleClicked(false)
+      sessionStorage.setItem(`item${item.id}`, 'false')
+    } else {
+      toggleClicked(true)
+      sessionStorage.setItem(`item${item.id}`, 'true')
+    }
   }
 
   return (
   < MediaCard
     title = { `${item.title} | ${item.date}` }
     primaryAction = {{
-      content: `${liked ? 'Liked' : 'Like'}`,
+      content: `${sessionStorage.getItem(`item${item.id}`) === 'true' ? 'Liked' : 'Like'}`,
       onAction: handleclick,
       }}
       description= {`${item.explanation}`}
