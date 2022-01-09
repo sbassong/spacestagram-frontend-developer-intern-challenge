@@ -1,5 +1,5 @@
 # **Spacestagram**
-### By: Sam Bassong | 01/06/2021
+### By: Sam Bassong
 
 ## **Description**
 

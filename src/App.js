@@ -1,13 +1,13 @@
 import { useState, useLayoutEffect } from 'react';
 import './styles/App.css';
 import { Page } from '@shopify/polaris';
-import Axios from 'axios'
+import Axios from 'axios';
 import ImageCard from './components/ImageCard';
 
 const API_KEY = process.env.REACT_APP_NASA_API_KEY
 
 function App() {
-  const [apiImages, setApiImages] = useState([] || JSON.parse(localStorage.getItem('apiImages')))
+  const [apiImages, setApiImages] = useState([] || JSON.parse(sessionStorage.getItem('apiImages')))
 
   const getImagesFromAPI = async () => {
     try {
