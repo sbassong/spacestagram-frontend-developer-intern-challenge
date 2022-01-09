@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect } from 'react';
 import './styles/App.css';
-import { Page } from '@shopify/polaris';
+import { Page, Frame, Loading } from '@shopify/polaris';
 import Axios from 'axios';
 import ImageCard from './components/ImageCard';
 
@@ -40,9 +40,10 @@ function App() {
       subtitle={`Explore the universe with NASA' APOD API`}
     >
       {
-        apiImages.length > 0 && apiImages.map(item => (
-        <ImageCard key={item.id} item={item} />
-      ))}
+        apiImages.length > 0 
+        ? apiImages.map(item =>  <ImageCard key={item.id} item={item} />)
+        : <Frame> <Loading /> </Frame>
+      }
     </Page>
   );
 }
