@@ -3,7 +3,10 @@ import { MediaCard } from '@shopify/polaris';
 
 
 const ImageCard = ({item}) => {
-  const cachedLikeStatus = sessionStorage.getItem(`imgItem-${item.id}`) 
+  const cachedLikeStatus = sessionStorage.getItem(`imgItem-${item.id}`)
+  const imgAlt = `Illustration of ${item.title}, sourced from NASA`
+
+
   const [likedStatus, toggleLikeStatus] = useState( cachedLikeStatus ? cachedLikeStatus : 'Like' )
 
   const handleclick = () => {
@@ -22,14 +25,13 @@ const ImageCard = ({item}) => {
     primaryAction = {{
       content: likedStatus,
       onAction: handleclick,
-      // color: likedStatus === 'Liked' && 'Action Highlight Subdued'
     }}
     description={`${item.explanation}`} 
-    accessibilityLabel={`${likedStatus} image`} 
+    accessibilityLabel={`${likedStatus} image on click`} 
 
   >
     <img
-      alt={`Illustration of ${item.title}, sourced from NASA`}
+      alt={imgAlt}
       width="100%"
       height="100%" 
       style={{ objectFit: 'cover', objectPosition: 'center', }}

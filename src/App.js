@@ -9,10 +9,19 @@ const API_KEY = process.env.REACT_APP_NASA_API_KEY
 function App() {
   const [apiImages, setApiImages] = useState([] || JSON.parse(sessionStorage.getItem('apiImages')))
 
+  const reqURL = `https://api.nasa.gov/planetary/apod?count=5&api_key=${API_KEY}`
+  const pageSubtitle=`Explore the universe with NASA' APOD API`
+  const pageTitle='Spacetagram' 
+  const loader = (
+  <Frame> 
+    <Loading />
+  </Frame>
+  )
+
   const getImagesFromAPI = async () => {
     try {
       let count = 1
-      const results = await Axios.get(`https://api.nasa.gov/planetary/apod?count=5&api_key=${API_KEY}`)
+      const results = await Axios.get(reqURL)
       const resultsWithID = results.data.map(item => {
         item['id'] = count
         count++
@@ -36,13 +45,13 @@ function App() {
     <Page
       narrowWidth
       className='App'
-      title='Spacetagram' 
-      subtitle={`Explore the universe with NASA' APOD API`}
+      title={pageTitle}
+      subtitle={pageSubtitle}
     >
       {
         apiImages.length > 0 
         ? apiImages.map(item =>  <ImageCard key={item.id} item={item} />)
-        : <Frame> <Loading /> </Frame>
+        : loader
       }
     </Page>
   );
