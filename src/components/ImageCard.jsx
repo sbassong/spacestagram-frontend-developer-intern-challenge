@@ -3,8 +3,9 @@ import { MediaCard } from '@shopify/polaris';
 
 
 const ImageCard = ({item}) => {
-  const cachedLikeStatus = sessionStorage.getItem(`imgItem-${item.id}`)
-  const imgAlt = `Illustration of ${item.title}, sourced from NASA`
+  const {title, date, id, explanation, url} = item
+  const cachedLikeStatus = sessionStorage.getItem(`imgItem-${id}`)
+  const imgAlt = `Illustration of ${title}, sourced from NASA`
 
 
   const [likedStatus, toggleLikeStatus] = useState( cachedLikeStatus ? cachedLikeStatus : 'Like' )
@@ -12,21 +13,21 @@ const ImageCard = ({item}) => {
   const handleclick = () => {
     if (likedStatus === 'Like') {
       toggleLikeStatus('Liked')
-      sessionStorage.setItem(`imgItem-${item.id}`, 'Liked')
+      sessionStorage.setItem(`imgItem-${id}`, 'Liked')
     } else {
       toggleLikeStatus('Like')
-      sessionStorage.setItem(`imgItem-${item.id}`, 'Like')
+      sessionStorage.setItem(`imgItem-${id}`, 'Like')
     }
   }
 
   return (
   < MediaCard
-    title = { `${item.title} | ${item.date}` }
+    title = { `${title} | ${date}` }
     primaryAction = {{
       content: likedStatus,
       onAction: handleclick,
     }}
-    description={`${item.explanation}`} 
+    description={`${explanation}`} 
     accessibilityLabel={`${likedStatus} image on click`} 
 
   >
@@ -35,7 +36,7 @@ const ImageCard = ({item}) => {
       width="100%"
       height="100%" 
       style={{ objectFit: 'cover', objectPosition: 'center', }}
-      src={item.url}
+      src={url}
     />
   </MediaCard >
   )

@@ -1,14 +1,10 @@
 # **Spacestagram**
 ### By: Sam Bassong
-<br>
 
 ## **Description**
-
 ### [Spacestagram]() is an image-sharing app from the final frontier. Built as my submision for Shopify's frontend developer internship, this app uses NASA's API to source its images. 
-<br>
 
 ## **Technologies**
-
 * ### [Reactjs](https://reactjs.org/) / [create-react-app](https://create-react-app.dev/)
 *  ### Astronomy Picture of the Day API ([APOD](https://github.com/nasa/apod-api)) from [NASA](https://api.nasa.gov/)
 * ### [Polaris](https://polaris.shopify.com/)
@@ -17,11 +13,10 @@
 
 ## **Libraries**
 * ### [Axios-HTTP](https://axios-http.com/)
-<br>
+
 
 ## **Getting Started**
 ### *This guide assumes you're running the application on NodeJS runtime. You may download it on the [official NodeJS](https://nodejs.org/en/) site or use your favorite package manager*
-<br>
 
 1. ### Copy this repo's SSH URL link and clone it on your local machine via your terminal with the command:
     ```sh 
@@ -35,8 +30,7 @@
     ```sh 
     npm install
     ```
-1. ### Launch the React app on http://localhost:3000 with the command
-
+1. ### Launch the React app on http://localhost:3000 with the following command:
     ```sh 
     npm start
     ```
