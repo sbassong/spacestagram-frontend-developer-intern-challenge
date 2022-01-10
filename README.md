@@ -2,7 +2,7 @@
 By: Sam Bassong
 
 ## **Description**
-### [Spacestagram]() is an image-sharing app from the final frontier. Built as my submision for Shopify's frontend developer internship, this app uses NASA's API to source its images. 
+### [Spacestagram](https://spacestagram-frontend-developer-intern-challenge.vercel.app/) is an image-sharing app from the final frontier! Built as my submission for Shopify's frontend developer internship, this app uses NASA's API to source its images. It is built with Shopify's Polaris and deployed on Vercel.
 
 ## **Technologies**
 *  [Reactjs](https://reactjs.org/) / [create-react-app](https://create-react-app.dev/)
@@ -17,7 +17,7 @@ By: Sam Bassong
 
 ## **Getting Started**
  *This guide assumes you're running the application on NodeJS runtime. You may download it on the [official NodeJS](https://nodejs.org/en/) site or use your favorite package manager*
-1. Copy this repo's SSH URL link and clone it on your local machine via your terminal with the command:
+1. Copy this repo's SSH URL link and clone it onto your local machine via your terminal with the command:
     ```sh 
     git clone git@github.com:sbassong/spacestagram-frontend-developer-intern-challenge.git
     ```
